@@ -30,5 +30,5 @@ Add a new endpoint: `GET /users/me` to retrieve the authenticated `User` object.
 * Assign the result of `auth.current_user(request)` to `request.current_user`
 * Update method for the route `GET /api/v1/users/<user_id>` in `api/v1/views/users.py`:
 	* If `<user_id>` is equal to `me` and `request.current_user` is `None: abort(404)`
-	* If `<user_id>` is equal to `me` and `request.current_user` is not `None: return the authenticated `User` in a JSON response (like a normal case of `GET /api/v1/users/<user_id>` where `<user_id>` is a valid `User` ID)
+	* If `<user_id>` is equal to `me` and `request.current_user` is not `None`: return the authenticated `User` in a JSON response (like a normal case of `GET /api/v1/users/<user_id>` where `<user_id>` is a valid `User` ID)
 Otherwise, keep the same behavior
